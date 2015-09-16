@@ -131,7 +131,7 @@ public class UserPayload implements IModel {
             if ( null != nickname ) {
                 Preconditions.checkArgument(nickname.getBytes().length <= 64,
                         "The length of nickname must less than 64 bytes.");
-                Preconditions.checkArgument(StringUtils.isLineBroken(nickname),
+                Preconditions.checkArgument(!StringUtils.isLineBroken(nickname),
                         "The nickname must not contain line feed character.");
             }
 
